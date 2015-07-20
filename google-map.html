@@ -1,0 +1,131 @@
+<!DOCTYPE html> <!--[if IE 9]><html class=lt-ie10 lang=en><![endif]--> <html class=no-js lang=en> <head> <link href="//balipermataindah.com/google-map.html" rel=canonical /> <meta charset=utf-8> <meta name=viewport content="width=device-width, initial-scale=1.0"> <meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible> <title>Bali Permata Indah Google Map | P.T. Bali Permata Indah</title> <link href="/stylesheets/essential-e7eda568.css" media=screen rel=stylesheet /> <link href="/images/favicon.ico" rel=icon type="image/ico"/> </head> <body id=page_bg class=google-map> <a name=up id=up></a> <div id=main_bg class=main_bg_center> <div id=logo_bg> <img alt=logo align=left hspace=5 src="/images/green/logo-11ae9296.png"/> <a class=logo href="/"></a> <div id=user4> <form method=get id=search action="//duckduckgo.com/"> <input type=hidden name=sites value="balipermataindah.com"/> <input type=hidden name=ka value=h /> <input type=hidden name=k7 value="#fafafa"/> <input type=hidden name=kj value="#3f3f3f"/> <input type=hidden name=ky value="#fafafa"/> <input type=hidden name=kx value=b /> <div class=search> <input name=q maxlength=255 placeholder=Search id=mod_search_searchword maxlength=20 alt=Search class=inputbox size=20 /> </div> <input type=submit value="DuckDuckGo Search" style="visibility: hidden;"/> </form> </div> <br clear=all /> </div> <div id=user3> <div id=pillmenu> <ul id=mainlevel-nav> <li><a class=mainlevel-nav id="" href="/">HOME</a></li> <li><a class=mainlevel-nav id="" href="/our-philosophy.html">Our Philosophy</a></li> <li><a class=mainlevel-nav id="" href="/contact-us.html">Contact Us</a></li> </ul> </div> </div> <div id=banner_news></div> <div id=banner> <div style='text-align:center;'> <img class=sih5451 title="" alt="" width=980 height=190 src="/images/banners/google-map.htmlbanner-fcb68d13.jpg"/> </div> </div> <div id=leftcolumn> <div class=module> <div> <div> <div> <ul class=menu> <li class=item60><a href="/vita-lifer-health-retreat.html"><span>vita-life® Health Retreat</span></a> </li> <li class=item73><a href="/vita-lifer-project-video.html"><span>vita-life® Project Video</span></a></li> <li class=item77><a href="/vita-lifer-brochure.html"><span>vita-life® Brochure</span></a></li> </ul> </div> </div> </div> </div> <br/> <div align=center></div> </div> <div id=maincolumn> <div class=path></div> <div class=nopad> <div id=phocamaps> <div id=phocamaps-box> <div class=pmbox-grey> <div> <div> <div> <div id=phocaMap style="width:520px;height:520px"></div> </div> </div> </div> </div> </div> <script>//<![CDATA[
+  google.load("maps", "3.x", {other_params: "sensor=false"});
+  google.load("search", "1");
+
+  var tstPhocaMap = document.getElementById('phocaMap');
+  var tstIntPhocaMap;
+  var mapPhocaMap;
+
+
+  function CancelEventPhocaMap(event) {
+      var e = event;
+      if (typeof e.preventDefault == 'function') e.preventDefault();
+      if (typeof e.stopPropagation == 'function') e.stopPropagation();
+      if (window.event) {
+          window.event.cancelBubble = true;
+          /* for IE */
+          window.event.returnValue = false;
+          /* for IE */
+      }
+  }
+
+  function CheckPhocaMap() {
+      if (tstPhocaMap) {
+          if (tstPhocaMap.offsetWidth != tstPhocaMap.getAttribute("oldValue")) {
+              tstPhocaMap.setAttribute("oldValue", tstPhocaMap.offsetWidth);
+              if (tstPhocaMap.getAttribute("refreshMap") == 0) {
+                  if (tstPhocaMap.offsetWidth > 0) {
+                      clearInterval(tstIntPhocaMap);
+                      getPhocaMap();
+                      tstPhocaMap.setAttribute("refreshMap", 1);
+                  }
+              }
+          }
+      }
+  }
+
+  function getPhocaMap() {
+      if (tstPhocaMap.offsetWidth > 0) {
+
+          var phocaLatLng = new google.maps.LatLng(-8.692941, 115.1680119);
+          var phocaOptions = {
+              zoom: 10,
+              center: phocaLatLng,
+              mapTypeControl: true,
+              mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DEFAULT,
+                  position: google.maps.ControlPosition.BOTTOM },
+              navigationControl: true,
+              navigationControlOptions: {style: google.maps.NavigationControlStyle.DEFAULT},
+              scaleControl: false,
+              scrollwheel: 1,
+              disableDoubleClickZoom: 0,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+
+          mapPhocaMap = new google.maps.Map(document.getElementById('phocaMap'), phocaOptions);
+          var phocaImage4 = new google.maps.MarkerImage('/components/com_phocamaps/assets/images/igreen/image.png',
+                  new google.maps.Size(26, 26),
+                  new google.maps.Point(0, 0),
+                  new google.maps.Point(0, 30));
+          var phocaImageShadow4 = new google.maps.MarkerImage('/components/com_phocamaps/assets/images/igreen/shadow.png',
+                  new google.maps.Size(39, 26),
+                  new google.maps.Point(0, 0),
+                  new google.maps.Point(0, 30));
+          var phocaImageShape4 = {
+              coord: [15, 2, 18, 3, 19, 4, 20, 5, 21, 6, 22, 7, 23, 8, 23, 9, 23, 10, 23, 11, 23, 12, 23, 13, 23, 14, 23, 15, 23, 16, 22, 17, 22, 18, 21, 19, 20, 20, 19, 21, 17, 22, 21, 23, 21, 24, 16, 25, 8, 25, 4, 24, 4, 23, 8, 22, 6, 21, 5, 20, 4, 19, 3, 18, 3, 17, 2, 16, 2, 15, 2, 14, 2, 13, 2, 12, 2, 11, 2, 10, 2, 9, 2, 8, 3, 7, 4, 6, 5, 5, 6, 4, 7, 3, 10, 2],
+              type: 'poly'
+          };
+          var phocaPoint1 = new google.maps.LatLng(-8.692941, 115.1680119);
+          var markerPhocaMarker1 = new google.maps.Marker({
+              title: "Bali Permata Indah",
+              icon: phocaImage4,
+              shadow: phocaImageShadow4,
+              shape: phocaImageShape4,
+              position: phocaPoint1,
+              map: mapPhocaMap
+          });
+          var infoPhocaWindow1 = new google.maps.InfoWindow({
+              content: '<div style="width: 250px;height: 200px;"><h1>Bali Permata Indah</h1><div><p><span style=\"font-size: 12pt;\">Square 9</span><span style=\"font-size: 10pt;\"><br /><br />Jalan Raya Seminyak 504<br /></span><span style=\"font-size: 10pt;\"><br />Seminyak - Bali, 80361; Indonesia<br /><br />P: +62 361 734 078&nbsp;&nbsp;&nbsp; <br /><a href=\"index.php?option=com_contact&amp;view=contact&amp;catid=12:contacts&amp;id=1-contact-bali-permata-indah-\"><br />CONTACT US</a></span><!--  var prefix = \'&#109;a\' + \'i&#108;\' + \'&#116;o\';  var path = \'hr\' + \'ef\' + \'=\';  var addy19631 = \'bp&#105;\' + \'&#64;\';  addy19631 = addy19631 + \'dps\' + \'&#46;\' + \'c&#101;ntr&#105;n\' + \'&#46;\' + \'n&#101;t\' + \'&#46;\' + \'&#105;d?s&#117;bj&#101;ct=BPI W&#101;b S&#105;t&#101; Inq&#117;&#105;ry\';  var addy_text19631 = \'bp&#105;\' + \'&#64;\' + \'dps\' + \'&#46;\' + \'c&#101;ntr&#105;n\' + \'&#46;\' + \'n&#101;t\' + \'&#46;\' + \'&#105;d\';  document.write( \'<a \' + path + \'\\\'\' + prefix + \':\'
+                      + addy19631 + \'\\\'>\' );  document.write( addy_text19631 );  document.write( \'<\\/a>\' );  //--></p></div></div>'
+      }
+  )
+      ;
+      google.maps.event.addListener(markerPhocaMarker1, 'click', function () {
+          infoPhocaWindow1.open(mapPhocaMap, markerPhocaMarker1);
+      });
+      google.maps.event.trigger(markerPhocaMarker1, 'click');
+      var phocaImage5 = new google.maps.MarkerImage('/components/com_phocamaps/assets/images/istar/image.png',
+              new google.maps.Size(26, 26),
+              new google.maps.Point(0, 0),
+              new google.maps.Point(0, 30));
+      var phocaImageShadow5 = new google.maps.MarkerImage('/components/com_phocamaps/assets/images/istar/shadow.png',
+              new google.maps.Size(39, 26),
+              new google.maps.Point(0, 0),
+              new google.maps.Point(0, 30));
+      var phocaImageShape5 = {
+          coord: [13, 0, 13, 1, 13, 2, 14, 3, 14, 4, 15, 5, 15, 6, 15, 7, 21, 8, 25, 9, 25, 10, 23, 11, 22, 12, 21, 13, 20, 14, 19, 15, 19, 16, 19, 17, 19, 18, 19, 19, 19, 20, 20, 21, 20, 22, 20, 23, 20, 24, 19, 25, 6, 25, 5, 24, 5, 23, 5, 22, 5, 21, 5, 20, 5, 19, 6, 18, 6, 17, 6, 16, 6, 15, 5, 14, 4, 13, 3, 12, 2, 11, 0, 10, 0, 9, 4, 8, 9, 7, 9, 6, 10, 5, 10, 4, 11, 3, 11, 2, 12, 1, 12, 0],
+          type: 'poly'
+      };
+      var phocaPoint2 = new google.maps.LatLng(-8.404253478086728, 115.13563660012821);
+      var markerPhocaMarker2 = new google.maps.Marker({
+          title: "vita-life® ",
+          icon: phocaImage5,
+          shadow: phocaImageShadow5,
+          shape: phocaImageShape5,
+          position: phocaPoint2,
+          map: mapPhocaMap
+      });
+      var infoPhocaWindow2 = new google.maps.InfoWindow({
+          content: '<div style="width: 200px;height: 100px;"><h1>vita-life® </h1><div><span style=\"font-size: 14pt;\">Health Retreat</span></div></div>'
+      });
+      google.maps.event.addListener(markerPhocaMarker2, 'click', function () {
+          infoPhocaWindow2.open(mapPhocaMap, markerPhocaMarker2);
+      });
+      google.maps.event.trigger(markerPhocaMarker2, 'click');
+      google.maps.event.addDomListener(tstPhocaMap, 'DOMMouseScroll', CancelEventPhocaMap);
+      google.maps.event.addDomListener(tstPhocaMap, 'mousewheel', CancelEventPhocaMap);
+  }
+  }
+
+  function initialize() {
+      tstPhocaMap.setAttribute("oldValue", 0);
+      tstPhocaMap.setAttribute("refreshMap", 0);
+      tstIntPhocaMap = setInterval("CheckPhocaMap()", 500);
+  }
+
+  google.setOnLoadCallback(initialize);
+  //]]></script> <noscript><p class=p-noscript>For displaying map you need to enable JavaScript in your browser</p> <p>&nbsp;</p></noscript> <div style="text-align: right; color: rgb(211, 211, 211); clear: both; margin-top: 10px;margin-bottom:10px;">Powered by <a href="//www.phoca.cz" style="text-decoration: none;" target=_blank title="Phoca.cz">Phoca</a> <a href="//www.phoca.cz/phocamaps" style="text-decoration: none;" target=_blank title="Phoca Maps">Maps</a> </div> </div> </div> </div> <div id=rightcolumn> <div class=moduletable> <h3>POEM-Partnership</h3> <div id=poem style="padding:0 5px 0 15px">vita-life Asia has partnered with the <strong>Palace Of Extraordinary Miracles (POEM) network</strong>, combining two synergistic projects into one "POEM VITA".<br/><br/><a title="The Palace Of Extraordinary Miracles" href="//www.poemresorts.com/">Click here for more information regarding POEM.</a></div> </div> </div> <br clear=all /> <div id=f_area> <div class=moduletable> <div> <a href="//www.vita-life.com">www.vita-life.com</a><br/><br/> </div> <div>Copyright(C) 2006-2015 PT Bali Permata Indah. All Rights Reserved.</div> </div> <br clear=all /> </div> </div> <script src="/javascripts/all-9ddd0788.js"></script> </body> </html> <noscript><link href="/stylesheets/deferred-3a6caf3b.css" media=screen rel=stylesheet /></noscript> <noscript><img src="//gsi.betelgeuse.uberspace.de/piwik.php?idsite=0&amp;rec=1" style="border:0" alt=""/></noscript> <script>
+    var head = document.getElementsByTagName("head")[0];
+    var noscript = document.getElementsByTagName("noscript")[0];
+    head.insertAdjacentHTML('beforeend', noscript.innerHTML);
+</script>
